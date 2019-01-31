@@ -1,0 +1,24 @@
+# project language
+language: java
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+  - $HOME/.m2
+
+# To use more customizable environment running in a virtual machine
+sudo: enabled
+
+# Ubuntu distribution to use as test environment
+dist: trusty
+
+# Travis CI uses the .travis.yml file from the branch containing the git commit that triggers the build.
+# Include branches using a safelist, or exclude them using a blocklist.
+branches:
+  only:
+  - master
+  - release
+  - /^DATA-\d+.*$/
+  - /^epic-DATA-\d+.*$/
